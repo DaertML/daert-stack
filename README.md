@@ -62,6 +62,7 @@ The colors and location of the different groups of components is arbitrary, futu
 - Prompt Management: as new use cases for LLMs appear, and new prompts are developed and optimized, there is a need to keep track of changes along different versions of the same prompt; as well as comparisons on how a certain prompt improves the performance in different LLMs. For this use case tools like PromptFoo could be helpful.
 - Validation: a malicious user could attempt the model to generate harmful content or provide answers to questions that are out of the safety regions; because of that guardrails should be added to the LLM generation process to avoid the user from seeing such harmful content. Nemo and Guardrails are two examples of such frameworks.
 # Low Level Architecture
+![lowlevel](lowlevel-daert.png)
 ## LLM Generation
 - Ollama: provides an easy to use framework that resembles the metaphors from Docker; in this case, one can create Modelfiles that contain not only the name of the model to use, but also prompts, and the value for different hyperparameters to be used during the inference of the model. The Web UI is one of the most complete solutions, as it permits importing and exporting chats, making it easy for the user to keep track of interesting past conversations.
 - Llama.cpp: provides a fast inference framework that lacks the high availability of Ollama, with the trade-off of being slightly faster.
