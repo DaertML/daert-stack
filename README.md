@@ -68,4 +68,24 @@ The colors and location of the different groups of components is arbitrary, futu
 - TGI: solution developed by Hugging Face, meant for use in distributed environments and clouds.
 
 ## Prompt Optimization
-- DSPy:
+- DSPy: receives a prompt and some examples in the prompt, tries modifications over the prompt and evaluates them; chooses the most performing prompt for the use case.
+- Outlines
+- 
+## LLM Chaining
+- Langchain: one of the earliest frameworks for chaining LLM generations and prompts; one of the most complete frameworks, possibly too much developed around the openai solution. One of its biggest problems are the continuous modifications on the API.
+- Semantic Kernel: langchain alternative developed by Microsoft, more friendly to modifications and extensions with new components and connectors.
+- LlamaParse: framework that is more focused on the definition of data loaders for the ingest to the LLM context.
+
+## Web Search Index
+- Apache Solr: search index, the interaction with Apache Tika and Apache Nutch make it one of the angular pieces in the creation of a Web Index.
+- Apache Tika: used for the ingestion and processing of data from unstructured files like PDF, Word Documents...
+- Apache Nutch: engine that is used for crawling the Internet from a list of seed links.
+- Elasticsearch: as an alternative to Apache Solr, elasticsearch is getting more attention in the web index ecosystem lately.
+- Lucene: search engine that is used by Apache Solr.
+
+## Hallucination engines
+- websim: framework that uses Claude and OpenAI models to hallucinate web pages from a ficticious URL.
+- worldsim: set of prompts that make Claude to behave like a simulation engine to simulate the evolution of the world. Works as a hallucinated CLI.
+- Control Vectors: novel mechanism to influence the LLM to behave following a certain personality.
+
+## Context Extension
