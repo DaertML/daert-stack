@@ -28,6 +28,7 @@ an open architecture, and iteratively define production grade infrastructure.
 The colors and location of the different groups of components is arbitrary, future iterations may benefit from organizing them in a more suitable way.
 
 # High Level Architecture
+![highlevel](highlevel.png)
 - LLM Generation: makes the core of the solution, even though plenty of platforms to run LLMs have appeared, Ollama, LLaMA.cpp and Text-Generation-Inference (TGI) are the more production ready solutions. In these terms, there is no need of further development, as the solutions are meant to be running in a production environment.
 - Data Loaders: LLMs need data to extract value for user interactions; in a local environment such data can be given by the user in an easy manner by drag and dropping files into Web Interface; somehow in the enterprise ecosystem such data may come from a Data Lake, Data Silos, Data Pipelines or other 3rd party tools. Airbyte seems to be a well developed solution in the ecosystem.
 - RAG: Retrieval Augmented Generation could be one field of study in the LLM ecosystem; somehow, if seen as a component of a whole ecosystem, it can be modularized into different parts: rankers, chunkers, retrieval engines... It seems like a mistake to consider RAG as the main component in the LLM Ecosystem; as its capabilities are just meant to find best pieces of data previously loaded and indexed.
