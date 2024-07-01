@@ -22,3 +22,17 @@ At a glance, the proposed "daert-stack" seems complex and overengineered, someho
 to remove components and add new ones as time and needs evolve.
 
 It can be acknowledged that having a fully integrated platform will require development efforts from the community, as the interaction of many of such components is not trivial or well-defined.
+In addition, multiple solutions that are in the same group in our proposed architecture may be redundant, or provide features that are lacking in others; the main goal at this stage is to define
+an open architecture, and iteratively define production grade infrastructure.
+
+The colors and location of the different groups of components is arbitrary, future iterations may benefit from organizing them in a more suitable way.
+
+# High Level Architecture
+- LLM Generation: makes the core of the solution, even though plenty of platforms to run LLMs have appeared, Ollama, LLaMA.cpp and Text-Generation-Inference (TGI) are the more production ready solutions. In these terms, there is no need of further development, as the solutions are meant to be running in a production environment.
+- Data Loaders: LLMs need data to extract value for user interactions; in a local environment such data can be given by the user in an easy manner by drag and dropping files into Web Interface; somehow in the enterprise ecosystem such data may come from a Data Lake, Data Silos, Data Pipelines or other 3rd party tools. Airbyte seems to be a well developed solution in the ecosystem.
+- RAG: Retrieval Augmented Generation could be one field of study in the LLM ecosystem; somehow, if seen as a component of a whole ecosystem, it can be modularized into different parts: rankers, chunkers, retrieval engines... It seems like a mistake to consider RAG as the main component in the LLM Ecosystem; as its capabilities are just meant to find best pieces of data previously loaded and indexed.
+- Vector DB: prior to retrieving data by the RAG modules, there is a need to vectorize and index it. In these terms, different platforms have emerged, at this date pgvector has seem a further improvement in terms of performance with respect the alternatives; somehow, Weaviate seems to survive the test of time being easy to use with local LLMs.
+- Data Embedding: in order to add data to the vector DB, it needs to previously be vectorized, such vectorization is done by an embedding model; in this case it is better to embed data with encoder-based transformers than to do so with decoder-only LLMs. BERT-based models are a good solution in most of occasions, with a notable mention to matryoska embeddings.
+- 
+
+# Low Level Architecture
